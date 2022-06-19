@@ -1,11 +1,13 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/koq-app/src",
-  "prefix": "nx-koq",
+  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/koq-app",
         "index": "apps/koq-app/src/index.html",
@@ -13,8 +15,14 @@
         "polyfills": "apps/koq-app/src/polyfills.ts",
         "tsConfig": "apps/koq-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/koq-app/src/favicon.ico", "apps/koq-app/src/assets"],
-        "styles": ["apps/koq-app/src/styles.scss"],
+        "assets": [
+          "apps/koq-app/src/favicon.ico",
+          "apps/koq-app/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "apps/koq-app/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -74,12 +82,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/koq-app/**/*.ts", "apps/koq-app/**/*.html"]
+        "lintFilePatterns": [
+          "apps/koq-app/**/*.ts",
+          "apps/koq-app/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/koq-app"],
+      "outputs": [
+        "coverage/apps/koq-app"
+      ],
       "options": {
         "jestConfig": "apps/koq-app/jest.config.ts",
         "passWithNoTests": true
