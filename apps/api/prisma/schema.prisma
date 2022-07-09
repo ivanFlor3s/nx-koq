@@ -17,6 +17,7 @@ model User {
   email        String    @unique
   name         String?
   lastname     String?
+  imageUrl     String   @default("")
   role         Role      @default(USER)
   hash         String
   profile      Profile[]
