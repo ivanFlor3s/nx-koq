@@ -1,11 +1,26 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { Injectable } from '@nestjs/common';
-import { Message } from 'libs/api-interfaces/src/lib/api-interfaces';
+import { PrismaService } from '../shared/prisma/prisma.service';
+import * as argon from 'argon2'
+import { AuthDto } from '../../dto-models/auth.dto';
 
 @Injectable()
 export class AuthService {
+    constructor(private prisma: PrismaService){}
 
-    signUp():Message{
-        return {message:'Te logueaste'}
+    async signUp(dto:AuthDto){
+        const hash = await argon.hash(dto.password);
+        const {email, imageUrl} = dto
+        const user = await this.prisma.user.create({
+            data:{
+                email,
+                hash,
+                imageUrl
+            }
+        })
+        
+        // console.log({dto,})
+
+        return user
     }
 }
