@@ -3,6 +3,7 @@ export interface AuthDto {
     // name:string,
     // lastname:string
     imageUrl: string,
+    phoneNumber: string
     googleAcount:boolean
     password: string
 }

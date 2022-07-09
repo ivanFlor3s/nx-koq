@@ -3,6 +3,10 @@ import {IsBoolean, IsEmail, IsNotEmpty, IsString, IsUrl} from 'class-validator'
 
 export class AuthDto implements AuthInterface{
 
+    @IsNotEmpty()
+    @IsString()
+    phoneNumber: string;
+
     @IsString()
     @IsUrl()
     imageUrl: string;
