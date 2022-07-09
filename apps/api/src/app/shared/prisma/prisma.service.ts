@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import {PrismaClient} from '@prisma/client'
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class PrismaService extends PrismaClient {
-    constructor(){
+    constructor(private config: ConfigService){
         super({
             datasources:{
                 db:{
@@ -11,6 +12,8 @@ export class PrismaService extends PrismaClient {
                 }
             }
         })
+
+        console.log(config.get('DATABASE_URL'))
 
     }
 }
