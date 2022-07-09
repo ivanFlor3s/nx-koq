@@ -16,10 +16,17 @@ export class AuthService {
                 email,
                 hash,
                 imageUrl
+            },
+            //Defino los campos que quiero devolver
+            select:{
+                id:true,
+                email: true,
+                createdAt:true,
             }
         })
         
-        // console.log({dto,})
+        //Tambien puedo hacer
+        // delete user.hash
 
         return user
     }
