@@ -13,14 +13,18 @@ datasource db {
 model User {
   id           Int       @id @default(autoincrement())
   createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
   googleAcount Boolean   @default(false)
   email        String    @unique
+  phoneNumber  String
   name         String?
   lastname     String?
-  imageUrl     String   @default("")
+  imageUrl     String    @default("")
   role         Role      @default(USER)
   hash         String
   profile      Profile[]
+
+  @@map("users")
 }
 
 model Profile {
@@ -28,6 +32,8 @@ model Profile {
   name   String
   user   User   @relation(fields: [userId], references: [id])
   userId Int
+
+  @@map("profiles")
 }
 
 enum Role {
