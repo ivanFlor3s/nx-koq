@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    ports: 
+      - 5434:5432
+    volumes:
+      - koq:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: koq
+    networks:
+      - ivancode
+
+volumes:
+  koq: 
+networks:
+  ivancode:
