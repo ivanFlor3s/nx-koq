@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+
+    "db:dev:rm":"docker compose rm db -s -f -v ",
+    "db:dev:up":"docker compose up db -d ",
+    "prisma:dev:deploy":"prisma migrate deploy  --schema ./apps/api/prisma/schema.prisma",
+    "db:dev:restart":"npm run db:dev:rm && npm run db:dev:up && sleep 1 && npm run prisma:dev:deploy",
+
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
