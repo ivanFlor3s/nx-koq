@@ -58,16 +58,15 @@ export class AuthService {
     const passMatch = await argon.verify(user.hash, dto.password);
     if (!passMatch) throw new ForbiddenException('Password is incorrect');
 
-    const token = await this.signToken(user.id, user.email,user.imageUrl)
+    const token = await this.signToken(user.id, user.email)
     return token;
   }
 
   async signToken(
     userId: number,
     email: string,
-    imageUrl: string
   ): Promise<{ access_token: string }> {
-    const payload = { sub: userId, email, imageUrl };
+    const payload = { sub: userId, email };
     const token = await this.jwt.signAsync(payload, {
       secret: this.config.get('SECRET_KEY'),
       expiresIn: '15m',
