@@ -1,0 +1,11 @@
+{
+    "name": "koq-api",
+    "description": "REST API de koq",
+    "authors": "Ivan Flroes",
+    "version": "1.0.0",
+    "dependencies": {},
+    "scripts": {
+        "prisma:dev:deploy": "prisma migrate deploy  --schema ./prisma/schema.prisma"
+        
+    }
+}
