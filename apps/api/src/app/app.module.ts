@@ -10,7 +10,8 @@ import { AuthModule } from './auth/auth.module';
     SharedModule, 
     AuthModule, 
     ConfigModule.forRoot({
-      isGlobal: true
+      isGlobal: true,
+      envFilePath:'../.env'
     })
   ],
   controllers: [AppController],
