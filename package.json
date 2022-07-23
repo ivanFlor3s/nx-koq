@@ -3,11 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    
     "db:dev:rm": "docker compose rm db -s -f -v ",
     "db:dev:up": "docker compose up db -d ",
     "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && sleep 1 && nx prisma:dev:deploy api",
-    
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
@@ -34,6 +32,8 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nrwl/angular": "14.3.6",
     "@prisma/client": "^4.1.0",
+    "ag-grid-angular": "^28.0.0",
+    "ag-grid-community": "^28.0.2",
     "argon2": "^0.28.7",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
