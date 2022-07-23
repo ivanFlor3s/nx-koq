@@ -1,1 +1,1 @@
-export * from './lib/material';
+export * from './lib/material-modules.module';
