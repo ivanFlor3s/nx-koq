@@ -14,5 +14,5 @@ export interface AuthSignInDto {
 }
 
 export interface AuthGoogleSignInDto {
-    email
+    email: string
 }
