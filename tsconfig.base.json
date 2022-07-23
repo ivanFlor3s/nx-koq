@@ -17,7 +17,8 @@
     "paths": {
       "@nx-koq/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@nx-koq/core-data": ["libs/core-data/src/index.ts"],
-      "@nx-koq/material": ["libs/material/src/index.ts"]
+      "@nx-koq/material": ["libs/material/src/index.ts"],
+      "@nx-koq/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -7,6 +7,7 @@
     "core-data": "libs/core-data",
     "koq-app": "apps/koq-app",
     "koq-app-e2e": "apps/koq-app-e2e",
-    "material": "libs/material"
+    "material": "libs/material",
+    "shared": "libs/shared"
   }
 }
